@@ -8,7 +8,8 @@
     We are using io.js <script>document.write(process.version)</script>
     and Electron <script>document.write(process.versions['electron'])</script>.
 
-    <a href="#" id="open-url">Open Here</a>
+    <a href="#" id="open-url">Open URL Here</a><br/>
+    <a href="#" id="open-win">Open WINDOWS Here</a>
   </body>
 
   <script>
@@ -35,6 +36,17 @@
     ipc.on('ping', function (arg) {
       console.log(arg)
     })
+
+    // remote
+    var remote = require('remote')
+    var BrowserWindow = remote.require('browser-window')
+
+    var openWin = document.getElementById('open-win')
+
+    openWin.onclick = function () {
+      var win = new BrowserWindow({ width: 800, height: 600 })
+      win.loadUrl(url)
+    }
 
   </script>
 </html>
