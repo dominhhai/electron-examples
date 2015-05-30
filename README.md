@@ -1,2 +1,2 @@
 # electron-examples
-Electron (Atom Shell) Examples
+[Electron](https://github.com/atom/electron/tree/master/docs) (Atom Shell) Examples
