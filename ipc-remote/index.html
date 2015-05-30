@@ -44,6 +44,17 @@
     var openWin = document.getElementById('open-win')
 
     openWin.onclick = function () {
+      // capture screen
+      // we implement this function in the main process,
+      // so, we need to get 'fs' from the remote
+      // in order to implement the write operation
+      var fs = remote.require('fs')
+      remote.getCurrentWindow().capturePage(function (buf) {
+        fs.writeFile('/tmp/screenshot.png', buf, function (err) {
+          console.log(err)
+        })
+      })
+      // open new windows
       var win = new BrowserWindow({ width: 800, height: 600 })
       win.loadUrl(url)
     }
