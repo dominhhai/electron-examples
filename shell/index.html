@@ -15,6 +15,7 @@
     var shell = require('shell')
     var openUrl = document.getElementById('open-url')
     openUrl.onclick = function() {
+      shell.beep()
       shell.openExternal('https://github.com')
     }
 
