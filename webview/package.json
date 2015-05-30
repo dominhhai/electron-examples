@@ -1,0 +1,30 @@
+{
+  "name": "electron-sample",
+  "version": "1.0.0",
+  "description": "Electron (Atom Shell) Examples",
+  "main": "app.js",
+  "scripts": {
+    "start": "electron app.js",
+    "build": "electron-packager . ElectronExample --platform=darwin --arch=x64 --version=0.26.0 --ignore=node_modules/electron-* && cp img/Icon.icns ElectronExample.app/Contents/Resources/atom.icns",
+    "test": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dominhhai/electron-examples.git"
+  },
+  "keywords": [
+    "Electron",
+    "Example"
+  ],
+  "author": "Hai Do Minh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dominhhai/electron-examples/issues"
+  },
+  "homepage": "https://github.com/dominhhai/electron-examples#readme",
+  "devDependencies": {
+    "electron-packager": "^4.1.2",
+    "electron-prebuilt": "^0.27.1",
+    "standard": "^3.11.1"
+  }
+}
