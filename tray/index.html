@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>webview</title>
+  </head>
+  <body>
+    <h1>Hello World!</h1>
+    We are using io.js <script>document.write(process.version)</script>
+    and Electron <script>document.write(process.versions['electron'])</script>.
+
+    <a href="#" id="open-url">Open Here</a>
+  </body>
+
+  <script>
+    var shell = require('shell')
+    var clipboard = require('clipboard')
+
+    var openUrl = document.getElementById('open-url')
+    var url = 'https://github.com'
+    openUrl.onclick = function() {
+      shell.beep()
+      clipboard.writeText(url)
+      shell.openExternal(url)
+    }
+
+  </script>
+</html>
