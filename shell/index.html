@@ -13,10 +13,14 @@
 
   <script>
     var shell = require('shell')
+    var clipboard = require('clipboard')
+
     var openUrl = document.getElementById('open-url')
+    var url = 'https://github.com'
     openUrl.onclick = function() {
       shell.beep()
-      shell.openExternal('https://github.com')
+      clipboard.writeText(url)
+      shell.openExternal(url)
     }
 
   </script>
